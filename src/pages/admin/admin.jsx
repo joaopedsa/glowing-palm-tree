@@ -1,7 +1,7 @@
 import React from "react";
 import { DataGrid } from '@mui/x-data-grid';
 import Box from '@mui/material/Box';
-import Checkbox from "@mui/material/Checkbox"
+import CustomizedCheckbox from "./checkbox";
 import "./admin.css";
 
 
@@ -57,13 +57,12 @@ function Admin() {
         }}
         >
         <DataGrid
-            components={{BaseCheckbox: Checkbox}}
-            sx={{color: "white","& .PrivateSwitchBase-input": {color: "white"}}}
+            components={{BaseCheckbox: CustomizedCheckbox}}
+            componentsProps={{baseCheckbox: {background: "white"}}}
+            sx={{color: "white"}}
             rows={rows}
             columns={columns}
             pageSize={100}
-            rowsPerPageOptions={[5]}
-            checkboxSelection
             disableSelectionOnClick
             hideFooter={true}
         />

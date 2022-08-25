@@ -11,7 +11,7 @@ function Plan(props) {
 
     const handleSignPlan = () => {
         const plan = {
-            id: props.id ?? 1,
+            id: props.id,
             title: props.title,
             subTitle: props.subTitle,
             value: props.value
@@ -27,7 +27,7 @@ function Plan(props) {
                     {props.title}
                 </div>
                 <div className="subtitle-1-plan">
-                    {props.subtitle}
+                    {props.subTitle}
                 </div>
             </div>
             <div className="info-plan">
@@ -36,7 +36,7 @@ function Plan(props) {
             <div className="line"></div>
             <div className="container-info-plan">
                 <div className="info-plan">
-                    {props.rateLimit}/Request Per Month
+                    {props.rateLimit}/Requests Per Month
                 </div>
             </div>
             <Button name={"Sign Plan"} handleClick={() => handleSignPlan()}/>

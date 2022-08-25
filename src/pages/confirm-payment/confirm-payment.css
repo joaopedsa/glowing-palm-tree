@@ -14,3 +14,29 @@
 .container-confirm-payment div {
     color: white;
 }
+
+#warning {
+    font-weight: 800;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.container-warning {
+    border: 2px solid #82218f;
+    width: 400px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.api-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.container-apikey {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

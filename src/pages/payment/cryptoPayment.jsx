@@ -15,16 +15,18 @@ function CryptoPayment(props) {
     const navigate = useNavigate()
 
     const handlePayPlan = (e) => {
+        console.log(props.payment)
+        console.log(props.choicePlan)
         // Request to Generate new API
         navigate("/confirm-payment")
     }
 
    return (
     <div id="qr-container">
-        <h3>0x71237217317284123912931</h3>
-        <QRCode value="Teste"></QRCode>
+        <h3>klv1d68673pkfqs2xx8s2qsm0hsyusrx6njjmqrfddwupxkk2022t86qtxyw55</h3>
+        <QRCode value="klv1d68673pkfqs2xx8s2qsm0hsyusrx6njjmqrfddwupxkk2022t86qtxyw55"></QRCode>
         <div className="button-payment">
-            <Button handleClick={() => handlePayPlan()} name={"Pagar"} className="plan-button"></Button>
+            <Button handleClick={() => handlePayPlan()} name={"Pay"} className="plan-button"></Button>
         </div>
     </div>      
     )

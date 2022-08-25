@@ -1,18 +1,26 @@
 import Header from "../../components/header/header";
 import Plan from "../../components/plan/plan";
+import { connect } from 'react-redux';
 
 import "./plans.css"
 
-function Plans() {
-return (
-    <>
-        <Header />
-        <div className="container-plans">
-            <Plan title={"Basic"} subtitle={"The basics for individuals and organizations"} rateLimit={"10,000"} value={"10,000"}/>
-            <Plan title={"Enterprise"} subtitle={"The basics for individuals and organizations"} rateLimit={"100,000"} value={"100,000"}/>
-        </div>
-    </>
+
+const mapState = (state) => ({
+    plans: state.plans,
+})
+const connector = connect(mapState)
+
+function Plans(props) {
+    return (
+        <>
+            <Header />
+            <div className="container-plans">
+                {props.plans.map(plan => (
+                    <Plan key={"KEY-" + plan.id} id={plan.id} title={plan.title} subTitle={plan.subTitle} rateLimit={plan.rateLimit} value={plan.value}/>                  
+                ))}
+            </div>
+        </>
 )
 }
 
-export default Plans;
+export default connector(Plans);

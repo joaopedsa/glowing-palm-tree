@@ -1,5 +1,5 @@
 import { connect, useDispatch } from 'react-redux';
-import React, { useState } from "react";
+import React from "react";
 import Select from "react-select";
 import CryptoPayment from "./cryptoPayment";
 import CreditForm from "./creditForm";
@@ -16,7 +16,7 @@ const connector = connect(mapState)
 
 const methodOptions = [
     { value: "crypto", label: "Crypto" },
-    {value: "creditCard", label: "Credit Card"}
+    { value: "creditCard", label: "Credit Card"}
 ];
 
 function Payment(props) {
@@ -40,7 +40,7 @@ function Payment(props) {
             <div className="selector-container">
                     <div className="api-form">
                         <label>E-mail<input type="email" value={props.payment.user.email} name={"email"} onChange={handleChangeUser}/></label>
-                        <label>Name of your API<input type="apiName" value={props.payment.user.apiKeyName} name={"apiKeyName"} onChange={handleChangeUser}/></label>
+                        <label>Name of your API KEY<input type="apiName" value={props.payment.user.apiKeyName} name={"apiKeyName"} onChange={handleChangeUser}/></label>
                     </div>
                     <Select
                         options={methodOptions}

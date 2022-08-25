@@ -1,26 +1,42 @@
+import { connect } from 'react-redux';
+
 import { useEffect, useState } from 'react';
 import ReactLoading from 'react-loading';
 import Header from '../../components/header/header';
+import { ContentPaste } from '@mui/icons-material';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import "./confirm-payment.css";
 
-function ConfirmPayment(props) {
+const mapState = (state) => ({
+    apikey: state.apikey,
+})
+const connector = connect(mapState)
 
-    const [alreadyPay, setAlreadyPay] = useState(false)
+function ConfirmPayment(props) {
+    const [alreadyPay, setAlreadyPay] = useState(false);
+
     useEffect(() => {
         setTimeout(() => {
             setAlreadyPay(true)
         }, 5000)
-    }, [])
+    }, []);
 
     return (
         <>
             <Header />
             <div className='container-confirm-payment'>
                 { alreadyPay ? 
-                    <div>
-                        <strong> API KEY: </strong>
-                        872ae659-cbf5-4401-8984-895ebe90a11c
+                    <div className="api-container">
+                        <div className='container-apikey'>
+                            <strong> API KEY: &nbsp;</strong>
+                            {props.apikey}
+                            <CopyToClipboard style={{marginLeft: "10px", cursor: "pointer"}} text={props.apikey}><ContentPaste/></CopyToClipboard>
+                        </div>
+                        <div className='container-warning'>
+                            <div id="warning">Security Alert!</div>
+                            <div> Your api key is for personal use, non-transferable and for security reasons we do not store</div>
+                        </div>
                     </div>
                 : 
                     <>
@@ -33,4 +49,4 @@ function ConfirmPayment(props) {
     )
 }
 
-export default ConfirmPayment
+export default connector(ConfirmPayment);
