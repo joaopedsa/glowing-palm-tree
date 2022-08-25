@@ -1,3 +1,22 @@
+.api-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10vh;
+    justify-content: center;
+}
+
+label, h3 {
+    color: rgb(255,255,255);
+}
+
+.api-form input {
+    border: 1px solid #B3B3B3;
+    border-radius: 5px;
+    height: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
 .credit-container {
     display: flex;
     margin: auto;
@@ -11,6 +30,8 @@
 }
 
 #credit-form input {
+    border: 1px solid #B3B3B3;
+    border-radius: 5px;
     width: 100%;
     height: 30px;
     margin-bottom: 10px;
@@ -19,24 +40,19 @@
 .payment-container {
     display: grid;
     height: 90vh;
-    grid-template-columns: repeat(auto-fill, minmax(620px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
     margin: 0 auto;
 }
 
 #qr-container {
     display: flex;
     flex-direction: column;
-
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-#qr-container img {
-    margin-bottom: 15px;
-   margin-left: 230px;
-   width: 40%;
-}
-
-#qr-container h3 {
-    margin-left: 250px;
+#qr-container svg {
+    margin-bottom: 2vh;
 }
 
 .selector-container {
@@ -59,7 +75,6 @@
     display: flex;
     padding: 8px 12px;
     width: 100%;
-    margin-top: 15px;
     justify-content: center;
 }
 
@@ -68,4 +83,5 @@
     padding: 8px 12px;
     justify-content: center;
     width: 15%;
+    margin-top: 15px;
 }

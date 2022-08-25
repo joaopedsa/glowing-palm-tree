@@ -1,12 +1,22 @@
 import Button from "../button/button"
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { addPlan } from '../../store/actions/choicePlan';
 
 import "./plan.css"
 
 function Plan(props) {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    const handleClickPlan = (e) => {
+    const handleSignPlan = () => {
+        const plan = {
+            id: props.id ?? 1,
+            title: props.title,
+            subTitle: props.subTitle,
+            value: props.value
+        }
+        dispatch(addPlan(plan))
         navigate('/payment');
     }
     
@@ -21,15 +31,15 @@ function Plan(props) {
                 </div>
             </div>
             <div className="info-plan">
-                R${props.value}
+                {props.value} KLV
             </div>
             <div className="line"></div>
             <div className="container-info-plan">
                 <div className="info-plan">
-                    {props.rateLimit} Rate Limit
+                    {props.rateLimit}/Request Per Month
                 </div>
             </div>
-            <Button name={"Sign Plan"} handleClick={() => handleClickPlan()}/>
+            <Button name={"Sign Plan"} handleClick={() => handleSignPlan()}/>
         </div>
     )
 }

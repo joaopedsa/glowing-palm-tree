@@ -4,10 +4,7 @@ function Header() {
     return (
         <div className="container-header">
             <div className="info-header">
-                Klever
-            </div>
-            <div className="info-header">
-                Login
+                Klever Gates
             </div>
         </div> 
     )
