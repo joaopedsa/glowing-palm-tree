@@ -3,29 +3,69 @@
     margin: auto;
 }
 
-.payment-container {
+#credit-form {
     display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+    width: 100%;
+}
+
+#credit-form input {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.payment-container {
+    display: grid;
+    height: 90vh;
+    grid-template-columns: repeat(auto-fill, minmax(620px, 1fr));
+    margin: 0 auto;
+}
+
+#qr-container {
+    display: flex;
+    flex-direction: column;
+
 }
 
 #qr-container img {
-    bottom: 10%;
-    display: flex;
-    margin: auto;
-    width: 50%;
+    margin-bottom: 15px;
+   margin-left: 230px;
+   width: 40%;
+}
+
+#qr-container h3 {
+    margin-left: 250px;
 }
 
 .selector-container {
     display: inline-block;
-    width: 40%;
+    width: 60%;
     margin: auto;
 }
 
 .options-container {
+    display: block;
     margin: auto;
-    width: 40%;
+    
 }
 
 .options-container button {
-    display: flex;
     margin: auto;
+}
+
+.pay-button {
+    display: flex;
+    padding: 8px 12px;
+    width: 100%;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.pay-button-qr {
+    display: flex;
+    padding: 8px 12px;
+    justify-content: center;
+    width: 15%;
 }
