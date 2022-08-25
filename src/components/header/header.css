@@ -1,0 +1,13 @@
+.container-header {
+    background: #14152c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 25px 0 25px;
+}
+
+.info-header {
+    color: white;
+    font-size: 16px;
+}

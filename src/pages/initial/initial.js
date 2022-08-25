@@ -1,4 +1,4 @@
-
+import "./initial.css"
 
 function Initial() {
     return (
