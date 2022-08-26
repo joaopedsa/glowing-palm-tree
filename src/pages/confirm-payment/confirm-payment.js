@@ -30,7 +30,7 @@ function ConfirmPayment(props) {
                     <div className="api-container">
                         <div className='container-apikey'>
                             <strong> API KEY: &nbsp;</strong>
-                            {props.apikey}
+                            {props.apikey.key}
                             <CopyToClipboard style={{marginLeft: "10px", cursor: "pointer"}} text={props.apikey}><ContentPaste/></CopyToClipboard>
                         </div>
                         <div className='container-warning'>

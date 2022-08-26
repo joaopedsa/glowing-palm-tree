@@ -1,9 +1,11 @@
-const initialState = "APIKEY TETSTEKAJSLIAJSLAJ"
+const initialState = {
+    key: "APIKEY TETSTEKAJSLIAJSLAJ"
+}
 
 const ApiKeyReducer = (state = initialState, action) => {
     switch(action.type) {
         case "ADD_API_KEY":
-            return action.value;
+            return { ...state, key: action.value }
         default:
             return state;
     }

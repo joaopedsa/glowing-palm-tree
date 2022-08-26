@@ -1,5 +1,6 @@
 const initialState = {
     plan: {
+        id: 0,
         value: 0,
         title: "Default",
         rateLimit: 1000,

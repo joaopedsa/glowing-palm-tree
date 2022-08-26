@@ -1,9 +1,11 @@
 import React from "react";
 import QRCode from "react-qr-code";
 import { useNavigate } from "react-router-dom";
+import { addApiKey } from "../../store/actions/apikey";
 import Button from "../../components/button/button";
+import axios from "axios";
 
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 
 const mapState = (state) => ({
     payment: state.payment,
@@ -13,11 +15,16 @@ const connector = connect(mapState)
 
 function CryptoPayment(props) {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
-    const handlePayPlan = (e) => {
-        console.log(props.payment)
-        console.log(props.choicePlan)
-        // Request to Generate new API
+    const handlePayPlan = async (e) => {
+        const body = {
+            email: props.payment.user.email,
+            alias: props.payment.user.apiKeyName,
+            planId: props.choicePlan.plan.id.toString(),
+        }
+        const { data } = await axios.post("http://localhost:8080/v1/api-key/create", body)
+        dispatch(addApiKey(data.value))
         navigate("/confirm-payment")
     }
 
