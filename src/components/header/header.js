@@ -5,7 +5,7 @@ function Header() {
     return (
         <div className="container-header">
             <div className="info-header">
-                <img src={KleverGate} height={"100%"}></img>
+                <img alt={"logo"} src={KleverGate} height={"100%"}></img>
             </div>
         </div> 
     )
