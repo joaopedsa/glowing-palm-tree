@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
 import Admin from "./admin/admin";
 import Plans from "./plans/plans";
 import Payment from "./payment/payment";
